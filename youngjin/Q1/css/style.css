@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "맑은 고딕";
+  color: #333333;
+}
+
+body {
+  width: 1000px;
+  height: 650px;
+  background-color: #ffffff;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+header {
+  float: left;
+}
+
+/* 전체 픽셀 계산 잘하기 */
+.top {
+  float: right;
+  width: 200px;
+  height: 650px;
+}
+
+.logo {
+  float: left;
+  width: 200px;
+  height: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.menu {
+  float: left;
+}
+
+.imgslide {
+  float: right;
+  width: 800px;
+  height: 200px;
+}
+
+.contents {
+  float: right;
+  width: 800px;
+  height: 200px;
+}
+
+.notice {
+  float: left;
+  width: 300px;
+  height: 200px;
+}
+
+.gallery {
+  float: left;
+  width: 300px;
+  height: 200px;
+}
+
+.shortcut {
+  float: right;
+  width: 200px;
+  height: 200px;
+}
+
+footer {
+  float: right;
+}
+
+.bottom {
+  float: right;
+  width: 800px;
+  height: 100px;
+}
+
+.btlogo {
+  float: left;
+  width: 200px;
+  height: 100px;
+}
+
+.copy {
+  float: left;
+  width: 400px;
+  height: 100px;
+}
+
+/* 가장 오른쪽에 있으니 오른쪽 정렬 */
+.familysite {
+  float: right;
+  width: 200px;
+  height: 100px;
+}
