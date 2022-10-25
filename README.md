@@ -1,3 +1,5 @@
+`git config --global core.autocrlf true`
+
 ## 이기적 영진 닷컴
 
 ### 진행 상황
