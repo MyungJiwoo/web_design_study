@@ -22,6 +22,7 @@ a {
 
 header {
   float: left;
+  position: absolute; /* 메뉴 작업할 땐 position absolute로 설정! */
 }
 
 /* 전체 픽셀 계산 잘하기 */
@@ -41,12 +42,75 @@ header {
 
 .menu {
   float: left;
+  top: 100px;
+  left: 10px;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+.navi > li {
+  float: left;
+  width: 180px;
+}
+.navi > li > a {
+  width: 180px;
+  height: 40px;
+  line-height: 40px; /* 줄 간격 */
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #333333;
+  color: #ffffff;
+}
+.navi > li > a:hover {
+  background-color: #eeeeee;
+  color: #000000;
+}
+
+.submenu {
+  float: left;
+  width: 180px;
+  height: 100%;
+  left: 180px; /* 서브메뉴를 메인메뉴 옆으로 이동 */
+  top: 0;
+  position: absolute;
+  background-color: #cccccc;
+  display: none; /* 처음엔 보이지 않게 설정 */
+  z-index: 1;
+}
+.submenu > li > a {
+  width: 180px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #cccccc;
+  color: #ffffff;
+}
+.submenu > li > a:hover {
+  background-color: #999999;
+  color: #ffff00;
 }
 
 .imgslide {
   float: right;
   width: 800px;
-  height: 200px;
+  height: 350px;
+  /* 자식 요소들은 부모요소가 가진 공간 안에서 위치가 정해짐 */
+  position: relative;
+}
+.imgslide > a {
+  display: block; /* 요소를 앞 뒤로 줄바꿈 */
+  position: absolute; /* 부모 요소를 기준으로 절댓값 */
+}
+.imgslide span {
+  width: 160px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  left: 40%;
+  top: 45%;
+  position: absolute;
+  background-color: rgba(200, 200, 200, 0.5);
 }
 
 .contents {
@@ -61,16 +125,132 @@ header {
   height: 200px;
 }
 
+.tab {
+  float: left;
+  width: 300px;
+}
+
+.notice h4 {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+}
+
+.notice ul {
+  float: left;
+  width: 280px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.notice li span {
+  float: right;
+}
+
+.notice li:hover {
+  font-weight: bold;
+}
+
 .gallery {
   float: left;
   width: 300px;
   height: 200px;
 }
 
+.gallery h4 {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+}
+
+.gallery ul li {
+  float: left;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.gallery img {
+  width: 80px;
+  height: 80px;
+}
+
+.gallery li:hover {
+  opacity: 0.5;
+}
+
 .shortcut {
   float: right;
   width: 200px;
   height: 200px;
+}
+
+.shortcut img {
+  float: right;
+  width: 180px;
+  height: 180px;
+  padding: 10px;
+}
+
+.sctext {
+  width: 100px;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 85px;
+  margin-left: 50px;
+}
+
+/* 모달 창 잘 보이게끔 배경 흐리게 */
+#modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  display: none;
+}
+/* 모달 창이 활성화 되어 있을 때 */
+#modal.active {
+  display: block;
+}
+
+.modal_up {
+  width: 400px;
+  height: 400px;
+  position: fixed;
+  left: 30%;
+  top: 20%;
+  background-color: #ffffff;
+}
+.uptitle {
+  margin-top: 30px;
+  text-align: center;
+  line-height: 16px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.upbody {
+  padding: 30px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.btn {
+  width: 80px;
+  height: 20px;
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  background: #cccccc;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 
 footer {
@@ -81,6 +261,7 @@ footer {
   float: right;
   width: 800px;
   height: 100px;
+  background-color: #cccccc;
 }
 
 .btlogo {
@@ -88,11 +269,21 @@ footer {
   width: 200px;
   height: 100px;
 }
+.btlogo img {
+  float: left;
+  width: 200px;
+  height: 40px;
+  margin-top: 25px;
+  margin-left: 10px;
+}
 
 .copy {
   float: left;
   width: 400px;
   height: 100px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 100px;
 }
 
 /* 가장 오른쪽에 있으니 오른쪽 정렬 */
@@ -100,4 +291,13 @@ footer {
   float: right;
   width: 200px;
   height: 100px;
+}
+
+.familysite select {
+  float: right;
+  height: 30px;
+  width: 190px;
+  margin-top: 20px;
+  margin-right: 10px;
+  font-size: 14px;
 }
