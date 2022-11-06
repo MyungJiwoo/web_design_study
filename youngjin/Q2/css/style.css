@@ -41,6 +41,58 @@ header {
   float: right; /* 와이어프레임에서 오른쪽에 있었음 -> flex의 역할 하는 듯 */
   width: 800px;
   height: 100px;
+
+  z-index: 1;
+}
+
+.navi {
+  float: right;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+
+.navi > li {
+  /* li 메뉴들 가로 일렬로 정렬 */
+  float: left;
+}
+
+.navi > li > a {
+  width: 180px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.navi > li > a:hover {
+  background-color: #30a3f3;
+}
+
+.submenu {
+  width: 180px;
+  height: 160px; /* 서브메뉴 4개라 4*40 */
+  position: absolute;
+  display: none; /* js 사용해서 보이게끔 하려고 */
+  z-index: 1;
+  background-color: #ffffff;
+}
+
+.submenu > li > a {
+  width: 180px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.submenu > li > a:hover {
+  background-color: #30a3f3;
 }
 
 .bodywrap {
@@ -51,18 +103,133 @@ header {
 .imgslide {
   width: 1200px;
   height: 300px;
+  position: relative; /* 안에 있는 콘텐츠가 이것을 중심으로 상대적일 수 있게 포지션 설정 */
+  overflow: hidden; /* 현재 슬라이드 외에 보이지 않게 */
+}
+
+.slidelist {
+  width: 3600px; /* imgslide의 width인 1200의 *3, 어차피 hidden이라 안보임 */
+}
+
+.slidelist ul li {
+  width: 1200px;
+  float: left;
+}
+
+.slidelist span {
+  width: 500px;
+  height: 50px;
+  position: absolute; /* 문구가 사진의 정중앙에 있도록 포지션 설정 */
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 50px;
+  background-color: rgba(40, 40, 40, 0.5);
+  margin-left: 350px;
+  margin-top: 125px;
 }
 
 .contents {
   float: left; /* 왼쪽 정렬 */
   width: 1200px;
   height: 200px;
+
+  position: absolute; /* 부모가 절대 포지션이어야 자식도 가능 */
 }
 
 .tabmenu {
   float: left; /* flex 역할 */
-  width: 400px;
-  height: 200px;
+  width: 395px;
+  height: 180px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tabmenu > li {
+  float: left; /* 공지사항과 갤러리 두줄로 */
+  width: 100px;
+  line-height: 30px;
+}
+
+.tabmenu > li > a {
+  display: block; /* 요소의 앞 뒤로 줄바꿈 되게끔 */
+  font-size: 16px;
+  text-align: center;
+  background-color: #cccccc;
+  border: 1px solid #dddddd;
+  border-bottom: none; /* 테두리가 바닥에만 없도록 */
+}
+
+.tabmenu > li > a:hover {
+  background-color: #eeeeee;
+}
+
+.tabmenu > li:first-child a {
+  border-right: none; /* 둘 다 겹쳐져서 보일 거라 하나는 테두리 없애줌 */
+}
+
+.tabmenu > li.active > a {
+  /* tabmenu에서 li 중에 활성화된 부분이 있다면 링크의 배경색 바꿔줌 */
+  background-color: #ffffff;
+}
+
+.tabmenu > li div {
+  position: absolute;
+  left: 0;
+  height: 0; /* 활성화가 될 때만 보여주기 위해 0으로 설정 */
+  overflow: hidden;
+}
+
+/* 활성화된 탭 */
+.tabmenu > li.active div {
+  width: 393px; /* 테두리 1px 값 계산해서 -2px */
+  height: 148px; /* 180px에서 줄간격과 테두리 1px 값 계산해서 -2px */
+  border: 1px solid #dddddd;
+  z-index: 1;
+}
+
+.notice ul {
+  float: left;
+  width: 393px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.notice li {
+  height: 32px; /* 메뉴가 4개인 것 + 마진 등 계산해서 작성 */
+  line-height: 32px;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* 짝수번 자식들 */
+.notice li:nth-child(2n) {
+  background-color: #cccccc;
+}
+
+.notice li span {
+  float: right;
+}
+
+.notice li:hover {
+  font-weight: bold;
+}
+
+.gallery li {
+  float: left;
+  margin-top: 15px;
+  margin-left: 5px;
+}
+
+.gallery img {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+}
+
+.gallery li:hover {
+  opacity: 0.5;
 }
 
 .otherwrap {
@@ -73,14 +240,115 @@ header {
 
 .banner {
   float: left; /* flex 역할 */
-  width: 400px;
-  height: 200px;
+  width: 395px;
+  height: 180px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.banner img {
+  float: left;
+  width: 395px;
+  height: 180px;
+}
+
+.bntext {
+  float: left; /* 왼쪽 정렬 */
+  width: 300px;
+  height: 40px;
+  position: absolute;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 40px;
+  background-color: rgba(40, 40, 40, 0.3);
+  left: 450px;
+  top: 80px;
+}
+
+.banner img:hover {
+  opacity: 0.5;
 }
 
 .shortcut {
   float: right; /* flex 역할 */
   width: 400px;
-  height: 200px;
+  height: 180px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.shortcut img {
+  float: left;
+  width: 400px;
+  height: 180px;
+}
+
+.sctext {
+  float: left; /* 왼쪽 정렬 */
+  width: 300px;
+  height: 40px;
+  position: absolute;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 40px;
+  background-color: rgba(40, 40, 40, 0.3);
+  left: 850px; /* 바로가기의 위치까지 계산해서 이동 */
+  top: 80px;
+}
+
+.shortcut img:hover {
+  opacity: 0.5;
+}
+
+/* 레이어 모달창 */
+#layer {
+  position: absolute;
+  z-index: 1;
+  display: none;
+}
+
+#layer.active {
+  /* layer가 활성화되면 보이도록 */
+  display: block;
+}
+
+.layer_up {
+  width: 500px;
+  height: 400px;
+  position: fixed; /* 브라우저 크기와 상관없이 위치 동일 */
+  left: 30%;
+  top: 20%;
+  background-color: #ffffff;
+}
+
+.uptitle {
+  margin-top: 30px;
+  text-align: center;
+  line-height: 16px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upbody {
+  padding: 30px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.btn {
+  width: 80px;
+  height: 20px;
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  background: #cccccc;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 
 footer {
@@ -95,6 +363,13 @@ footer {
   height: 100px;
 }
 
+.btlogo img {
+  float: left;
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
 /* site가 하단 메뉴와 카피라이트를 같이 가지고 있음 */
 .site {
   float: right;
@@ -105,9 +380,25 @@ footer {
 .btmenu {
   width: 600px;
   height: 50px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.btmenu li {
+  margin-top: 10px;
+  display: inline-block; /* 리스트가 한 줄에 표시될 수 있도록 */
+  width: 100px;
+}
+
+.btmenu li:hover {
+  font-weight: bold;
 }
 
 .copy {
   width: 600px;
   height: 50px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 50px;
 }
