@@ -1,0 +1,310 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "맑은 고딕";
+  list-style: none;
+  font-size: 20px;
+  color: #222328;
+}
+
+html,
+body {
+  float: left;
+  width: 1000px;
+  height: 650px;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+/* layout */
+header {
+  float: left;
+  width: 250px;
+  height: 650px;
+
+  /* background-color: #222328; */
+}
+
+.logo {
+  width: 200px;
+  height: 40px;
+  margin-left: 25px;
+  margin-top: 50px;
+}
+
+.menu {
+  width: 200px;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 25px;
+  text-align: center;
+  z-index: 1;
+}
+
+.navi > li > a {
+  background-color: #ed3b4b;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.submenu {
+  display: none;
+}
+
+.submenu > li {
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.submenu > li > a:hover {
+  font-weight: bold;
+  background-color: #3b923d;
+}
+
+.imgslide {
+  float: right;
+  width: 750px;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+
+.imgslide > a {
+  display: block;
+  position: absolute;
+}
+
+.imgslide > a > span {
+  background-color: #ffffff86;
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 25px;
+  position: absolute;
+  top: 40%;
+  left: 33%;
+}
+
+.contents {
+  float: right;
+  width: 750px;
+  height: 200px;
+}
+
+.tab {
+  float: left; /* 넣어줘야 제목과 콘텐츠 구분됨 */
+  width: 300px;
+}
+
+.notice {
+  float: left;
+  width: 300px;
+  height: 200px;
+}
+
+.notice h4 {
+  float: left;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 15px;
+  text-align: center;
+  background-color: #3b923d;
+}
+
+.notice > ul {
+  float: left;
+  margin-top: 15px;
+}
+
+.notice > ul > li > a {
+  height: 25px;
+  font-size: 15px;
+}
+
+.notice > ul > li > a:hover {
+  font-weight: bold;
+}
+
+.notice > ul > li > a > span {
+  float: right;
+  font-size: 15px;
+}
+
+.gallery {
+  float: left;
+  width: 250px;
+  height: 200px;
+}
+
+.gallery h4 {
+  float: left;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 15px;
+  text-align: center;
+  background-color: #3b923d;
+}
+
+.gallery ul li {
+  float: left;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.gallery img {
+  width: 70px;
+  height: 70px;
+}
+
+.gallery img:hover {
+  opacity: 0.5;
+}
+
+.shortcut {
+  float: right;
+  width: 200px;
+  height: 200px;
+}
+
+.shortcut img {
+  float: right;
+  width: 180px;
+  height: 180px;
+  margin-top: 10px;
+}
+
+.shortcut span {
+  width: 100px;
+  height: 30px;
+  background-color: #ffffff86;
+  position: absolute;
+  line-height: 30px;
+  text-align: center;
+  margin-top: 85px;
+  margin-left: 60px;
+}
+
+.shortcut:hover {
+  opacity: 0.7;
+}
+
+#modal {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #2223289d;
+  display: none;
+}
+
+#modal.active {
+  display: block;
+}
+
+.up_modal {
+  background-color: #ffffff;
+  width: 550px;
+  height: 300px;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  position: fixed;
+}
+
+.uptitle {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.upbody {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 90px;
+}
+
+.btn {
+  width: 50px;
+  height: 25px;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  background-color: #3b923d;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+footer {
+  float: right;
+  width: 750px;
+  height: 100px;
+  background-color: #3b923d;
+}
+
+.copy {
+  float: left;
+  width: 450px;
+  height: 100px;
+  font-size: 15px;
+  text-align: center;
+  line-height: 100px;
+  /* background-color: #222328; */
+}
+
+.site {
+  float: right;
+  width: 270px;
+  height: 100px;
+  margin-top: 8px;
+  margin-right: 30px;
+}
+
+.sns {
+  float: right;
+}
+
+.sns ul {
+  text-align: center;
+  margin-right: 10px;
+}
+
+.sns ul li {
+  display: inline-block;
+}
+
+.sns img {
+  height: 40px;
+  width: 40px;
+  padding: 2px;
+}
+
+.sns img:hover {
+  opacity: 0.5;
+}
+
+.familysite {
+  /* float: right; */
+  text-align: center;
+}
+
+.familysite select {
+  float: right;
+}
