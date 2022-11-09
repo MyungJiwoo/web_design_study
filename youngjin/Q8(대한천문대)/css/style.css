@@ -1,0 +1,416 @@
+@charset "UTF-8";
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "맑은 고딕";
+  font-size: 16px;
+  list-style: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 700px;
+  text-align: center;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+span {
+  margin: 0;
+}
+
+/* 
+    main-color: #0066ad
+    sub-color: #30a3f3
+*/
+
+/* layout */
+header {
+  width: 1200px;
+  height: 100px;
+}
+
+.logo {
+  float: left;
+  width: 200px;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 상단 메인 메뉴 */
+.menu {
+  float: right;
+  width: 1000px;
+  height: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.menu > ul {
+  position: absolute;
+  right: 0;
+  top: 30px;
+}
+
+.menu > ul > li {
+  float: left;
+}
+
+.menu > ul > li > a {
+  width: 150px;
+  height: 45px;
+
+  text-align: center;
+  font-size: 19px;
+  line-height: 45px;
+
+  background-color: #0066ad;
+  color: #ffffff;
+}
+
+.submenu {
+  display: none; /* submenu에 display해야 js 먹음 */
+}
+
+.submenu > li {
+  height: 45px;
+  line-height: 45px;
+
+  background-color: #ffffff;
+}
+
+.submenu > li > a {
+  color: #0066ad;
+}
+
+.submenu > li:hover {
+  background-color: #30a3f3;
+}
+
+.submenu > li > a:hover {
+  color: #ffffff;
+}
+
+/* 이미지 슬라이드 */
+.imgslide {
+  width: 1200px;
+  height: 300px;
+}
+
+.imgslide img {
+  width: 1200px;
+  height: 300px;
+}
+
+.imgslide a {
+  position: absolute;
+}
+
+.imgtext {
+  width: 400px;
+  height: 50px;
+
+  position: absolute;
+  top: 45%;
+  left: 35%;
+
+  font-size: 25px;
+  line-height: 50px;
+
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+/* 콘텐츠 영역 */
+.contents {
+  width: 1200px;
+  height: 200px;
+  /* position: absolute; */
+}
+
+.wrap {
+  width: 400px;
+  height: 200px;
+  float: left;
+  position: absolute;
+}
+
+/* 콘텐츠 영역 : tabmenu (공지사항, 갤러리) */
+.tabmenu {
+  float: left;
+  width: 395px;
+  height: 200px;
+
+  margin: 5px 0;
+}
+
+.tabmenu > li {
+  float: left;
+  width: 120px;
+  line-height: 35px;
+}
+
+.tabmenu > li > a {
+  display: block;
+  width: 120px;
+  height: 25px;
+  line-height: 26px;
+
+  background-color: #0066ad;
+  border: 1px solid #30a3f3;
+  color: #ffffff;
+  border-bottom: none;
+
+  font-size: 17px;
+  text-align: center;
+}
+
+.tabmenu > li.active > a {
+  background-color: #30a3f3;
+}
+
+.tabmenu > li div {
+  position: absolute;
+  left: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.tabmenu > li.active div {
+  width: 395px;
+  height: 154px;
+  border: 1px solid #30a3f3;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice li {
+  width: 360px;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 10px;
+
+  color: #0066ad;
+}
+
+.notice li:hover {
+  font-weight: bold;
+}
+
+.notice li a {
+  width: 360px;
+  display: flex;
+  justify-content: space-between;
+  color: #0066ad;
+  font-size: 13px;
+}
+
+.notice li span {
+  font-size: 13px;
+}
+
+.gallery ul {
+  width: 360px;
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery li:hover {
+  opacity: 0.5;
+}
+
+.gallery img {
+  width: 110px;
+  height: 110px;
+}
+
+/* 콘텐츠 : 나머지 영역 (배너, 바로가기) */
+.otherwrap {
+  float: right;
+  width: 800px;
+  height: 200px;
+}
+
+.banner {
+  float: left;
+  width: 400px;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner img {
+  width: 400px;
+  height: 180px;
+}
+
+.banner:hover {
+  opacity: 0.7;
+}
+
+.shortcut {
+  float: right;
+  width: 400px;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.shortcut img {
+  width: 400px;
+  height: 180px;
+}
+
+.shortcut:hover {
+  opacity: 0.7;
+}
+
+.sctext {
+  width: 150px;
+  height: 50px;
+
+  color: #ffffff;
+  line-height: 50px;
+  font-size: 28px;
+
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+
+  position: absolute;
+  top: 40%;
+  left: 34%;
+}
+
+/* 팝업창 */
+#layer {
+  position: fixed;
+  top: 15%;
+  left: 35%;
+  z-index: 1;
+
+  display: none;
+}
+
+#layer.active {
+  display: block;
+}
+
+.up_layer {
+  width: 500px;
+  height: 250px;
+  border: 2px solid #30a3f3;
+
+  background-color: #ffffff;
+}
+
+.uptitle {
+  font-size: 23px;
+  font-weight: bold;
+  color: #0066ad;
+
+  margin: 20px 0;
+}
+
+.upbody {
+  padding: 10px 25px;
+  font-size: 16px;
+}
+
+.btn {
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+
+  background-color: #0066ad;
+  color: #ffffff;
+
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  cursor: pointer;
+}
+
+/* 푸터 */
+footer {
+  width: 1200px;
+  height: 100px;
+
+  background-color: #2f3031;
+}
+
+.btlogo {
+  float: left;
+  width: 200px;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btwrap {
+  float: right;
+  width: 1000px;
+  height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btmenu {
+  width: 500px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btmenu li {
+  float: left;
+  width: 150px;
+  line-height: 30px;
+}
+
+.btmenu li a {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.btmenu li a:hover {
+  font-weight: bold;
+  color: #30a3f3;
+}
+
+.copy {
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  color: #b6b6b6;
+}
