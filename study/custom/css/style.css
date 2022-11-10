@@ -1,0 +1,381 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #333333;
+  font-size: 18px;
+  font-family: "맑은 고딕";
+}
+
+html,
+body {
+  width: 1000px;
+  height: 650px;
+  background-color: #ffffff;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  margin: 0;
+}
+
+/* 
+MAIN: rgb(43, 43, 94);
+SUB: rgb(255, 244, 143);
+*/
+
+/* header */
+header {
+  float: left;
+  width: 200px;
+  height: 650px;
+
+  background-color: rgb(43, 43, 94);
+}
+
+.logo {
+  width: 200px;
+  height: 40px;
+
+  margin: 30px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  float: left;
+  position: absolute;
+  top: 100px;
+  left: 25px;
+
+  z-index: 1;
+}
+
+.navi > li {
+  width: 150px;
+  height: 40px;
+}
+.navi > li > a:hover {
+  font-weight: bold;
+  background-color: rgb(255, 244, 143);
+}
+
+.navi > li > a {
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: rgb(43, 43, 94);
+
+  background-color: #ffffff;
+}
+
+.submenu {
+  background-color: rgb(255, 244, 143);
+
+  float: left;
+  width: 150px;
+  height: 210px;
+  position: absolute; /* 서브 메뉴 옆으로 */
+  left: 150px;
+  top: -25px;
+
+  display: none;
+}
+
+.submenu li {
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.submenu li:hover {
+  background-color: rgba(43, 43, 94, 0.2);
+}
+
+.submenu li a {
+  color: rgb(43, 43, 94);
+}
+
+/* 이미지 슬라이드 */
+.imgslide {
+  float: left;
+  width: 800px;
+  height: 350px;
+}
+
+.imgslide > a {
+  position: absolute;
+}
+
+.imgslide > a > span {
+  position: absolute;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 23px;
+  top: 45%;
+  left: 30%;
+
+  background-color: #ffffff7c;
+}
+
+/* 콘텐츠 */
+.contents {
+  float: left;
+  width: 800px;
+  height: 200px;
+
+  position: relative;
+}
+
+/* 탭메뉴 */
+.tabmenu {
+  float: left;
+  width: 380px;
+  height: 180px;
+  padding: 10px;
+}
+
+.tabmenu > li {
+  float: left;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  background-color: rgba(43, 43, 94, 0.2);
+
+  text-align: center;
+}
+.tabmenu > li.active {
+  background-color: rgb(43, 43, 94);
+}
+
+.tabmenu > li > a {
+  color: rgb(43, 43, 94);
+}
+.tabmenu > li.active > a {
+  color: #ffffff;
+}
+
+.tabmenu > li div {
+  position: absolute;
+  left: 10px;
+
+  width: 375px;
+  height: 0;
+}
+
+.tabmenu > li.active div {
+  height: 140px;
+  z-index: 1;
+  background-color: #ffffff;
+  border: 2px solid rgb(43, 43, 94);
+}
+
+.notice li {
+  float: left;
+  width: 375px;
+  height: 35px;
+  line-height: 35px;
+}
+.notice li:hover {
+  background-color: rgb(255, 244, 143);
+}
+
+.notice li > a {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.notice li > a > span {
+  font-size: 15px;
+}
+
+.gallery ul {
+  height: 140px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.gallery li {
+  height: 110px;
+}
+.gallery li:hover {
+  opacity: 0.5;
+}
+
+.gallery img {
+  width: 110px;
+  height: 110px;
+}
+
+/* 바로가기 */
+.shortcut,
+.banner {
+  float: left;
+  width: 200px;
+  height: 200px;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shortcut:hover,
+.banner:hover {
+  opacity: 0.5;
+}
+
+.shortcut > a,
+.banner > a {
+  height: 200px;
+}
+
+.shortcut img,
+.banner img {
+  width: 200px;
+  height: 200px;
+}
+
+.shortcut span,
+.banner span {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+
+  background-color: rgb(43, 43, 94, 0.4);
+  color: #ffffff;
+}
+
+/* 모달 */
+#modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  z-index: 3;
+  display: none;
+
+  background-color: rgba(40, 40, 40, 0.5);
+}
+
+#modal.active {
+  display: block;
+}
+
+.up_modal {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+
+  position: absolute;
+  top: 10%;
+  left: 20%;
+
+  text-align: center;
+
+  background-color: #ffffff;
+  border: 5px solid rgb(43, 43, 94);
+}
+
+.uptitle {
+  margin: 10px;
+  font-size: 20px;
+
+  color: rgb(43, 43, 94);
+  font-weight: bold;
+}
+
+.upbody {
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 30px;
+
+  font-size: 13px;
+
+  background-color: rgb(43, 43, 94);
+  color: #ffffff;
+
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(255, 244, 143);
+  color: rgb(43, 43, 94);
+}
+
+/* 푸터 */
+footer {
+  float: left;
+  width: 800px;
+  height: 100px;
+  background-color: #eeeeee;
+
+  display: flex;
+}
+
+.btlogo {
+  width: 200px;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btmenu {
+  width: 600px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btmenu li {
+  margin: 0 10px;
+}
+
+.btmenu li a {
+  color: rgb(43, 43, 94);
+}
+.btmenu li a:hover {
+  color: rgb(255, 244, 143);
+}
+
+.familysite {
+  width: 600px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.familysite select {
+  width: 200px;
+  border-radius: 30px;
+}
