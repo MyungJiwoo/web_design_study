@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: seagreen;
+  font-size: 20px;
+}
+
+a {
+  margin: 0;
+  text-decoration: none;
+  display: block;
+}
+
+.contents {
+  position: absolute;
+}
+
+.tabmenu {
+  width: 500px;
+  height: 300px;
+}
+
+.tabmenu > li {
+  float: left;
+}
+
+.tabmenu > li > a {
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+
+  background-color: rgb(126, 180, 150);
+}
+
+.tabmenu > li > div {
+  position: absolute;
+  left: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.tabmenu > li.active div {
+  width: 300px;
+  height: 200px;
+  border: 2px solid seagreen;
+  z-index: 1;
+}
+
+.tabmenu > li.active > a {
+  background-color: seagreen;
+  color: #ffffff;
+}
+
+.notice,
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice li,
+.gallery li {
+  line-height: 35px;
+}
+
+.notice li > a,
+.gallery li > a {
+  width: 250px;
+  padding: 0 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .contents {
+  position: absolute;
+}
+
+.tabmenu > li {
+  float: left;
+}
+
+.tabmenu > li div {
+  position: absolute;
+  left: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.tabmenu > li.active div {
+  width: 393px;
+  height: 148px;
+  z-index: 1;
+
+  border: 1px solid #dddddd;
+} */
