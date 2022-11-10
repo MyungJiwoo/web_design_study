@@ -75,25 +75,25 @@ a {
   justify-content: space-between;
 }
 
-/* .contents {
-  position: absolute;
+/* .contents {  => 전체 영역
+  position: absolute; => 전체의 포지션 잡아줌
 }
 
-.tabmenu > li {
-  float: left;
+.tabmenu > li { => 메뉴들 (ex. 공지사항, 갤러리)
+  float: left;  => 탭 메뉴들이 왼쪽으로 갈 수 있도록
 }
 
-.tabmenu > li div {
-  position: absolute;
-  left: 0;
-  height: 0;
-  overflow: hidden;
+.tabmenu > li div { => 각각의 콘텐츠 상자 (.notice, .gallery)
+  position: absolute;   => 탭 메뉴의 본질 콘텐츠의 포지션 잡아줌
+  left: 0;  => absolute만 하면 왼쪽이 뜨는데, left=0으로 두 콘텐츠의 시작이 겹치도록 포지션 잡음 (중요)
+  height: 0;    => active된 콘텐츠만 보이도록 처음에는 높이를 0으로 설정
+  overflow: hidden; => 넘어가는 것들은 안보이도록
 }
 
-.tabmenu > li.active div {
-  width: 393px;
-  height: 148px;
-  z-index: 1;
+.tabmenu > li.active div {  => 활성화된 콘텐츠 영역
+  width: 393px; => 여기서 영역을 잡아줘야 콘텐츠가 보임
+  height: 148px; => 여기서 영역을 잡아줘야 콘텐츠가 보임
+  z-index: 1;   => 선택된 영역이 제일 위에 오게끔 설정
 
   border: 1px solid #dddddd;
 } */
