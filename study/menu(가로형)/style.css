@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "맑은 고딕";
+  font-size: 16px;
+  list-style: none;
+}
+
+html,
+body {
+  width: 1200px;
+  height: 700px;
+  text-align: center;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  margin: 0;
+}
+
+header {
+  width: 1200px;
+  height: 100px;
+  background-color: #cccccc;
+
+  position: relative;
+}
+
+.logo {
+  float: left;
+  width: 200px;
+  height: 100px;
+}
+
+/* 메뉴-가로형 */
+#menu_bg {
+  width: 1200px;
+  height: 200px;
+
+  position: absolute;
+  top: 100px;
+
+  background-color: teal;
+  display: none;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.navi > li {
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #ffffff;
+
+  float: left;
+}
+.navi > li:hover {
+  background-color: teal;
+}
+
+.navi > li > a {
+  color: teal;
+}
+.navi > li > a:hover {
+  color: #ffffff;
+}
+
+.submenu {
+  width: 150px;
+  height: 200px;
+  background-color: teal;
+
+  display: none;
+}
+
+.submenu > li {
+  width: 150px;
+  height: 50px;
+  background-color: teal;
+}
+.submenu > li:hover {
+  background-color: #ffffff;
+}
+
+.submenu > li > a {
+  color: #ffffff;
+}
+.submenu > li > a:hover {
+  color: teal;
+}
+
+/* etc */
+.contents {
+  width: 1200px;
+  height: 600px;
+  background-color: #dddddd;
+}
+
+footer {
+  width: 1200px;
+  height: 100px;
+  background-color: #eeeeee;
+}
