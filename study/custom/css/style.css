@@ -47,6 +47,7 @@ header {
   align-items: center;
 }
 
+/* 메뉴 - 세로형 */
 .menu {
   float: left;
   position: absolute;
@@ -78,7 +79,7 @@ header {
 .submenu {
   background-color: rgb(255, 244, 143);
 
-  float: left;
+  /* float: left; */
   width: 150px;
   height: 210px;
   position: absolute; /* 서브 메뉴 옆으로 */

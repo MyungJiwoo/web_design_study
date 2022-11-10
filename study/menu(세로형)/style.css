@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "맑은 고딕";
+  font-size: 16px;
+  list-style: none;
+}
+
+html,
+body {
+  width: 1200px;
+  height: 700px;
+  text-align: center;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  margin: 0;
+}
+
+header {
+  float: left;
+  width: 200px;
+  height: 700px;
+  background-color: #cccccc;
+}
+
+.logo {
+  margin: 50px 0;
+}
+
+/* 메뉴-세로형 */
+.menu {
+  position: absolute;
+  left: 25px;
+}
+
+.navi > li {
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #ffffff;
+}
+.navi > li:hover {
+  background-color: #333333;
+}
+
+.navi > li > a {
+  color: #333333;
+}
+.navi > li > a:hover {
+  color: #ffffff;
+}
+
+.submenu {
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 250px;
+  top: -25px;
+  left: 150px;
+  background-color: #333333;
+
+  display: none;
+}
+
+.submenu > li {
+  height: 50px;
+  line-height: 50px;
+}
+.submenu > li:hover {
+  background-color: #ffffff;
+}
+
+.submenu > li > a {
+  color: #ffffff;
+}
+.submenu > li > a:hover {
+  color: #333333;
+}
+
+/* etc */
+.contents {
+  float: right;
+  width: 1000px;
+  height: 600px;
+  background-color: #dddddd;
+}
+
+footer {
+  float: right;
+  width: 1000px;
+  height: 100px;
+  background-color: #eeeeee;
+}
