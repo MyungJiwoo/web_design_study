@@ -47,6 +47,16 @@ header {
 }
 
 /* 메뉴 */
+#menu_bg {
+  width: 1200px;
+  height: 135px;
+  position: absolute;
+  display: none;
+  z-index: 1;
+  top: 100px;
+  background-color: #4fa441;
+}
+
 .menu {
   float: right;
   position: absolute;
